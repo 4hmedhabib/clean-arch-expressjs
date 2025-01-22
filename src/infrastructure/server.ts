@@ -1,9 +1,9 @@
 import express from "express";
 import cors, { CorsOptions } from "cors";
 import { setupRestAPI } from "./interfaces";
-import { prisma } from "./databases";
 import { UserService } from "../core";
 import { Nodemailer } from "./mail";
+import { prisma } from "./databases";
 
 // Cors options
 const CORS_OPTIONS: CorsOptions = {

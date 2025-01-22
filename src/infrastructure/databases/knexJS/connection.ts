@@ -5,11 +5,11 @@ import { logger } from "../../logger";
 const knexConfig: Knex.Config = {
   client: "pg",
   connection: {
-    connectionString: config.db.url,
+    connectionString: `postgres://${config.db.user}:${config.db.pass}@${config.db.host}/${config.db.database}`,
     host: config.db.host,
     port: config.db.port,
-    user: config.db.user,
     database: config.db.database,
+    user: config.db.user,
     password: config.db.pass,
     pool: config.db.pool,
     ssl: false

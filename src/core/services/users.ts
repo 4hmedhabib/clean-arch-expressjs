@@ -35,6 +35,7 @@ export class UserService {
   async createUser(user: CreateUser): Promise<User | null> {
     // Check email is already exists
     const existingUser = await this.userRepo.findByEmail(user.email);
+
     if (existingUser) {
       throw new Error(`User email [${user.email}] is already exists`);
     }
